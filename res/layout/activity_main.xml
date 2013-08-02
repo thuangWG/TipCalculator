@@ -1,0 +1,222 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="@drawable/keroppi_background"> 
+
+    <TextView
+        android:id="@+id/introText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introduction" 
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp" />
+
+    <net.thuang.tip_calculator.MySpinner
+        android:id="@+id/locality_spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/introText"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="20dp" />
+    
+    <net.thuang.tip_calculator.MySpinner
+        android:id="@+id/tipRate_spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locality_spinner"
+        android:layout_marginTop="20dp" 
+        android:layout_marginLeft="2dp"/>
+    
+    <net.thuang.tip_calculator.MySpinner
+        android:id="@+id/split_spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tipRate_spinner"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="2dp" />
+    
+     <TextView
+        android:id="@+id/taxRateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/locality_spinner"
+        android:layout_alignTop="@+id/locality_spinner"
+        android:layout_marginLeft="10dp"
+        android:text="@string/taxRate" />
+     
+
+    <TextView
+        android:id="@+id/tipRateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/taxRateText"
+        android:layout_toRightOf="@+id/tipRate_spinner"
+        android:layout_alignTop="@+id/tipRate_spinner"
+        android:layout_marginLeft="10dp"
+        android:text="@string/tipRate" />
+    
+     <TextView
+        android:id="@+id/splitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/split_spinner"
+        android:layout_alignTop="@+id/split_spinner"
+        android:layout_marginLeft="10dp"
+        android:text="@string/splitAmount" />
+
+    
+     <TextView
+        android:id="@+id/taxRateNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/taxRateText"
+        android:layout_alignTop="@+id/taxRateText"
+        android:layout_marginLeft="5dp"
+        android:text="@string/defaultNum" />
+     
+      <TextView
+        android:id="@+id/tipRateNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tipRateText"
+        android:layout_alignTop="@+id/tipRateText"
+        android:layout_marginLeft="5dp"
+        android:text="@string/defaultNum" />
+      
+       <TextView
+        android:id="@+id/splitNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       	android:layout_toRightOf="@+id/splitText"
+        android:layout_alignTop="@+id/splitText"
+        android:layout_marginLeft="5dp"
+        android:text="@string/defaultInteger" />
+    
+     
+      <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/split_spinner"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="2dp"
+        android:text="@string/price" />
+      
+      <EditText
+        android:id="@+id/priceInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/price"
+        android:layout_marginLeft= "5dp"
+        android:layout_alignBaseline="@+id/price"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:digits="0123456789."
+        android:imeOptions="actionDone"
+        android:hint="@string/default_price" >
+
+        <requestFocus />
+    </EditText>
+    
+      
+      
+      
+    
+    <TextView
+        android:id="@+id/tipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/price"
+        android:layout_below="@+id/price"
+        android:layout_marginTop="35dp"
+        android:text="@string/tipLabel" />
+    
+
+     <TextView
+        android:id="@+id/tipNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tipText"
+        android:layout_toRightOf="@+id/tipText"
+        android:layout_marginLeft="5dp"
+        android:text="@string/defaultNum"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+
+     <TextView
+        android:id="@+id/taxText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/totalText"
+        android:layout_alignBaseline="@+id/tipText"
+        android:layout_toRightOf="@+id/tipText"
+        android:layout_marginLeft="150dp"
+        android:text="@string/taxLabel" />
+   
+
+    <TextView
+        android:id="@+id/taxNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/taxText"
+        android:layout_toRightOf="@+id/taxText"
+        android:layout_marginLeft="5dp"
+        android:text="@string/defaultNum"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+   
+   <TextView
+        android:id="@+id/totalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tipText"
+        android:layout_below="@+id/tipText"
+        android:layout_marginTop="50dp"
+        android:text="@string/totalLabel" />
+   
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/totalText"
+        android:layout_toRightOf="@+id/totalText"
+        android:layout_marginLeft="5dp"
+        android:text="@string/defaultNum"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+   
+    <TextView
+        android:id="@+id/SplitTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/totalText"
+        android:layout_alignLeft="@+id/taxText"
+        android:text="@string/splitLabel" />
+
+    <TextView
+        android:id="@+id/SplitAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/SplitTitle"
+        android:layout_toRightOf="@+id/SplitTitle"
+        android:layout_marginLeft="5dp"
+        android:text="@string/defaultNum"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+    
+    <Button
+        android:id="@+id/calculateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/totalText"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="90dp"
+        android:onClick="onCalculateBtnClick"
+        android:text="@string/calculateLabel" />
+
+    
+
+</RelativeLayout>
